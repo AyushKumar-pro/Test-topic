@@ -1,0 +1,213 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: #f5f5f5;
+}
+header {
+  width: calc(100% - 80px);
+  height: 90px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  position: fixed;
+  top: 22px;
+  width: calc(100% - 80px);
+  margin: 0px 40px;
+  max-width: 750px;
+  height: 45px;
+  z-index: 50;
+  background-color: rgb(245, 241, 241);
+  border-radius: 30px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+img#main-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  object-position: center;
+  top: -90px;
+}
+button#search,
+button#menu {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+}
+button#search {
+  margin-right: 9px;
+}
+button#menu {
+  margin-left: 9px;
+}
+input#box {
+  width: 100%;
+  margin: 0px 10px;
+  max-width: 400px;
+  height: 22px;
+  border-radius: 22px;
+  background-color: rgb(254, 252, 252);
+  border: 0px;
+  padding: 4px 20px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* background Color by AI*/
+  background-image: linear-gradient(
+    90deg,
+    #ff6a00 10%,
+    #ee0979 50%,
+    #43cea2 90%
+  );
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  /*AI*/
+  -webkit-text-stroke: 2px #222;
+  text-stroke: 2px #222;
+}
+.sub {
+  font-size: clamp(18px, 3vw, 30px);
+  top: 65.5%;
+  font-weight: 500;
+  background-image: none;
+  color: white;
+  -webkit-text-stroke: 0.5px #222;
+}
+section#sec1 {
+  width: 100%;
+  height: 110vh;
+  position: relative;
+  top: -94px;
+  margin-top: -94px;
+}
+div#sub-nav {
+  position: relative;
+  top: 250px;
+  width: 100%;
+  height: 35px;
+  z-index: 45;
+  background-color: rgb(245, 241, 241);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#sub-nav a {
+  text-decoration: none;
+  color: #222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+  cursor: pointer;
+}
+div#alphabet {
+  position: relative;
+  top: 265px;
+  width: 100%;
+  height: 35px;
+  z-index: 45;
+  background-color: rgb(245, 241, 241);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+a.alpha {
+  text-decoration: none;
+  color: #222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 600;
+}
+#region {
+  position: relative;
+  top: 265px;
+  padding: 2px 0px;
+  width: 100%;
+  z-index: 45;
+  background-color: rgb(245, 241, 241);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#region a {
+  text-decoration: none;
+  color: #222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 600;
+}
+
+/* Moving Cards CSS copilot */ /* Add this to your test.css file */
+
+.card-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  background: transparent;
+  top: 280px;
+}
+
+.card-track {
+  display: flex;
+  background-color: rgb(245, 241, 241);
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+  animation: moveRight 400s linear infinite;
+}
+
+.card {
+  flex: 0 0 170px;
+  height: 210px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: inherit;
+  color: #222;
+  cursor: pointer;
+}
+
+/* Animation keyframes */
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
