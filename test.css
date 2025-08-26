@@ -178,7 +178,7 @@ a.alpha {
   gap: 16px;
   width: max-content;
   will-change: transform;
-  animation: moveRight 400s linear infinite;
+  animation: moveRight 00s linear infinite;
 }
 
 .card {
@@ -190,10 +190,14 @@ a.alpha {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-weight: 600;
   font-family: inherit;
   color: #222;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 /* Animation keyframes */
@@ -210,4 +214,16 @@ a.alpha {
   height: 100%;
   border-radius: 12px;
   object-fit: cover;
+  object-position: center;
+}
+h3 {
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 90%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: clamp(14px, 2vw, 18px);
+  padding: 2px 0px;
 }
