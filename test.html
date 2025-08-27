@@ -47,6 +47,7 @@
               </g>
             </svg>
           </button>
+          <a href="test.html">Home</a>
           <input type="text" id="box" name="q" id="" placeholder="Search" />
           <button id="search" type="submit">
             <svg
@@ -84,17 +85,10 @@
             </svg>
           </button>
         </form>
-      </nav>
-    </header>
-    <img id="main-image" src="main.png" alt="main-image" />
-    <h1 class="title">Temple of the digital gods</h1>
-    <h2 class="title sub">Let's reimagine the Almighty</h2>
-    <main>
-      <section id="sec1">
-        <div id="sub-nav">
+        <div id="sub-nav" style="display: none">
           <ul>
-            <li><a>Alphabetically</a></li>
-            <li><a>Region</a></li>
+            <li><a href="#" id="alpha-link">Alphabetically</a></li>
+            <li><a href="#" id="region-link">Region</a></li>
             <li><a href="#sec2">About Us</a></li>
             <li><a href="#sec3">Contact</a></li>
           </ul>
@@ -136,32 +130,14 @@
           <a class="alpha" href="">Australia</a>
           <a class="alpha" href="">Antarctica</a>
         </div>
-        <script>
-          // Get links and divs
-          const subNavLinks = document.querySelectorAll("#sub-nav a");
-          const alphabetDiv = document.getElementById("alphabet");
-          const regionDiv = document.getElementById("region");
+      </nav>
+    </header>
 
-          // Hide both initially
-          alphabetDiv.style.display = "none";
-          regionDiv.style.display = "none";
-
-          // Show/hide alphabet on "Alphabetically" click
-          subNavLinks[0].addEventListener("click", function (e) {
-            e.preventDefault();
-            alphabetDiv.style.display =
-              alphabetDiv.style.display === "none" ? "flex" : "none";
-            regionDiv.style.display = "none";
-          });
-
-          // Show/hide region on "Region" click
-          subNavLinks[1].addEventListener("click", function (e) {
-            e.preventDefault();
-            regionDiv.style.display =
-              regionDiv.style.display === "none" ? "flex" : "none";
-            alphabetDiv.style.display = "none";
-          });
-        </script>
+    <img id="main-image" src="main.png" alt="main-image" />
+    <h1 class="title">Temple of the digital gods</h1>
+    <h2 class="title sub">Let's reimagine the Almighty</h2>
+    <main>
+      <section id="sec1">
         <div class="card-marquee">
           <div class="card-track">
             <div class="card">
@@ -192,6 +168,30 @@
               <img src="saraswati.jpg" width="100%" height="100%" alt="" />
               <h3>Saraswati</h3>
             </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
           </div>
         </div>
 
@@ -199,8 +199,6 @@
           <iframe id="frame-iframe" src="ganesha.html"></iframe>
         </div>
         <script>
-          // ...existing sub-nav script...
-
           // Card click to show iframe with content
           document.querySelectorAll(".card").forEach((card) => {
             card.addEventListener("click", function () {
@@ -221,23 +219,6 @@
                 .scrollIntoView({ behavior: "smooth" });
             });
           });
-          // ...existing code...
-          document.querySelectorAll(".card").forEach((card) => {
-            card.addEventListener("click", function () {
-              const title = card
-                .querySelector("h3")
-                .textContent.trim()
-                .toLowerCase();
-              const page = title + ".html";
-              document.getElementById("frame-iframe").src = page;
-              document.getElementById("card-frame").style.display = "block";
-              document.body.classList.add("iframe-active"); // Add class to body
-              document
-                .getElementById("card-frame")
-                .scrollIntoView({ behavior: "smooth" });
-            });
-          });
-          // ...existing code...
         </script>
 
         <section id="sec2">
@@ -284,5 +265,53 @@
         </footer>
       </section>
     </main>
+    <script>
+      // Improved menu and sub-nav logic
+      const menuBtn = document.getElementById("menu");
+      const subNav = document.getElementById("sub-nav");
+      const alphabetDiv = document.getElementById("alphabet");
+      const regionDiv = document.getElementById("region");
+      const alphaLink = document.getElementById("alpha-link");
+      const regionLink = document.getElementById("region-link");
+
+      menuBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        // Close alphabet and region if open
+        alphabetDiv.style.display = "none";
+        regionDiv.style.display = "none";
+        subNav.style.display =
+          subNav.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!menuBtn.contains(e.target) && !subNav.contains(e.target)) {
+          subNav.style.display = "none";
+          alphabetDiv.style.display = "none";
+          regionDiv.style.display = "none";
+        }
+      });
+
+      // Hide both sections initially
+      alphabetDiv.style.display = "none";
+      regionDiv.style.display = "none";
+
+      // Show/hide alphabet on 'Alphabetically' click
+      alphaLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        alphabetDiv.style.display =
+          alphabetDiv.style.display === "none" ? "flex" : "none";
+        regionDiv.style.display = "none";
+        subNav.style.display = "none";
+      });
+
+      // Show/hide region on 'Region' click
+      regionLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        regionDiv.style.display =
+          regionDiv.style.display === "none" ? "flex" : "none";
+        alphabetDiv.style.display = "none";
+        subNav.style.display = "none";
+      });
+    </script>
   </body>
 </html>
