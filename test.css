@@ -103,7 +103,7 @@ section#sec1 {
 }
 div#sub-nav {
   position: relative;
-  top: 250px;
+  top: 220px;
   width: 100%;
   height: 35px;
   z-index: 45;
@@ -111,7 +111,7 @@ div#sub-nav {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 #sub-nav a {
   text-decoration: none;
@@ -121,9 +121,23 @@ div#sub-nav {
   font-weight: 600;
   cursor: pointer;
 }
+#sub-nav {
+  ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0px 20px;
+    max-width: 700px;
+    justify-content: space-evenly;
+  }
+  ul li a:hover {
+    color: #ff6a00;
+    transition: 0.3s;
+  }
+}
 div#alphabet {
   position: relative;
-  top: 265px;
+  top: 245px;
   width: 100%;
   height: 35px;
   z-index: 45;
@@ -142,7 +156,7 @@ a.alpha {
 }
 #region {
   position: relative;
-  top: 265px;
+  top: 245px;
   padding: 2px 0px;
   width: 100%;
   z-index: 45;
@@ -165,26 +179,41 @@ a.alpha {
 
 .card-marquee {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden;
   position: relative;
-  height: 220px;
+  padding: 10px 0px;
   background: transparent;
   top: 280px;
+  /* Optional: Hide scrollbar for a cleaner look */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6a00 #f5f5f5;
+}
+
+.card-marquee::-webkit-scrollbar {
+  height: 8px;
+}
+.card-marquee::-webkit-scrollbar-thumb {
+  background: #ff6a00;
+  border-radius: 8px;
+}
+.card-marquee::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 8px;
 }
 
 .card-track {
   display: flex;
-  background-color: rgb(245, 241, 241);
   gap: 16px;
+  padding: 10px 20px;
+  animation: scroll 20s linear infinite;
   width: max-content;
   will-change: transform;
-  animation: moveRight 00s linear infinite;
+  /* Remove animation for manual scrolling */
 }
-
 .card {
-  flex: 0 0 170px;
-  height: 210px;
-  background: #fff;
+  flex: 0 0 200px;
+  height: 270px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -199,15 +228,8 @@ a.alpha {
   overflow: hidden;
   transition: transform 0.3s ease;
 }
-
-/* Animation keyframes */
-@keyframes moveRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.card:hover {
+  transform: scale(1.05);
 }
 .card img {
   width: 100%;
@@ -226,4 +248,104 @@ h3 {
   border-radius: 8px;
   font-size: clamp(14px, 2vw, 18px);
   padding: 2px 0px;
+}
+#card-frame {
+  display: block;
+  position: relative;
+  top: 300px;
+  width: calc(100% - 48px);
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  text-align: center;
+}
+#frame-iframe {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer {
+  width: 100%;
+  padding: 20px 0px;
+  text-align: center;
+  background-color: #222;
+  color: #f5f5f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  top: 300px;
+}
+footer p {
+  margin: 5px 0;
+  font-size: clamp(12px, 1.5vw, 16px);
+}
+/* Adjust nav and sub-nav positions when footer is added */
+nav {
+  top: 10px; /* Adjusted from 22px to 10px */
+}
+div#sub-nav {
+  top: 220px; /* Adjusted from 250px to 220px */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 150px;
+  }
+  #card-frame {
+    top: 320px;
+    padding: 16px;
+  }
+  #frame-iframe {
+    height: auto;
+  }
+}
+#sec2 {
+  width: 100%;
+  margin-top: 100px;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  position: relative;
+  top: 300px;
+}
+#sec2 h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  margin-bottom: 20px;
+}
+#sec2 p {
+  font-size: clamp(14px, 2.5vw, 18px);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+}
+#sec3 {
+  width: 100%;
+  min-height: 50vh;
+  background-color: #fff;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  position: relative;
+  top: 300px;
+}
+#sec3 h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  margin-bottom: 20px;
+}
+#sec3 p {
+  font-size: clamp(14px, 2.5vw, 18px);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
 }
