@@ -1,0 +1,41 @@
+/* Responsive styles for Vishnu info card (same as ganesha.css) */
+.ganesha-card {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  text-align: center;
+}
+.ganesha-card img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.ganesha-card h2 {
+  color: #43cea2;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.ganesha-card p {
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .ganesha-card {
+    max-width: 95vw;
+    padding: 12px;
+  }
+  .ganesha-card img {
+    max-width: 90vw;
+  }
+  .ganesha-card h2 {
+    font-size: 1.3rem;
+  }
+  .ganesha-card p {
+    font-size: 1rem;
+  }
+}
