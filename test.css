@@ -94,7 +94,7 @@ input#box {
   /*AI*/
   -webkit-text-stroke: 2px #222;
   text-stroke: 2px #222;
-    text-align: center;
+  text-align: center;
 }
 .sub {
   font-size: clamp(18px, 3vw, 30px);
@@ -134,15 +134,17 @@ section#sec1 {
 #sub-nav {
   display: none;
   position: fixed;
-  top: 95px;
+  top: 82px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
+  font-size: clamp(16px, 1.8vw, 20px);
   max-width: 400px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   z-index: 100;
   margin: 0;
+  padding: 0;
 }
 #sub-nav ul {
   list-style: none;
@@ -152,14 +154,12 @@ section#sec1 {
   justify-content: center;
   height: 100%;
   margin: 0px;
-  padding: 16px;
   gap: 10px;
 }
 #sub-nav ul li a {
   text-decoration: none;
   color: #222;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: clamp(12px, 1.5vw, 16px);
   font-weight: 600;
   cursor: pointer;
 }
@@ -171,51 +171,44 @@ section#sec1 {
   border-radius: 30px;
   width: 100%;
   flex-wrap: wrap;
-  padding: 7px;
+  padding: 7px 0px;
+  padding-right: 7px;
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(245, 241, 241);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
 }
-div#alphabet {
-  margin-top: 8px;
+div#alphabet,
+#region {
+  margin: 8px auto;
   border-radius: 30px;
   width: 100%;
-  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 550px;
+  padding: 0px;
+  height: 40px;
   z-index: 49;
   background-color: rgb(245, 241, 241);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
 }
 a.alpha {
   text-decoration: none;
   color: #222;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: clamp(13.5px, 1.5vw, 17.5px);
   font-weight: 600;
 }
 #region {
-  margin-top: 8px;
-  gap: 10px;
-  border-radius: 30px;
-  padding: 10px;
-  width: 100%;
-  z-index: 45;
-  background-color: rgb(245, 241, 241);
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.307);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
+  max-width: 600px;
 }
 #region a {
   text-decoration: none;
   color: #222;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: clamp(13.5px, 1.5vw, 17.5px);
   font-weight: 600;
 }
 
@@ -396,4 +389,3 @@ nav {
   max-width: 800px;
   margin: auto;
 }
-
