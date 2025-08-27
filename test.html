@@ -92,10 +92,12 @@
     <main>
       <section id="sec1">
         <div id="sub-nav">
-          <a>Alphabetically</a>
-          <a>Region</a>
-          <a href="">About Us</a>
-          <a href="">Contact</a>
+          <ul>
+            <li><a>Alphabetically</a></li>
+            <li><a>Region</a></li>
+            <li><a href="#sec2">About Us</a></li>
+            <li><a href="#sec3">Contact</a></li>
+          </ul>
         </div>
         <div id="alphabet">
           <a class="alpha" href="">A</a>
@@ -182,11 +184,105 @@
               <img src="saraswati.jpg" width="100%" height="100%" alt="" />
               <h3>Saraswati</h3>
             </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
+            <div class="card">
+              <img src="saraswati.jpg" width="100%" height="100%" alt="" />
+              <h3>Saraswati</h3>
+            </div>
           </div>
         </div>
+
+        <div id="card-frame">
+          <iframe id="frame-iframe" src="ganesha.html"></iframe>
+        </div>
+        <script>
+          // ...existing sub-nav script...
+
+          // Card click to show iframe with content
+          document.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("click", function () {
+              // Get the card title text
+              const title = card
+                .querySelector("h3")
+                .textContent.trim()
+                .toLowerCase();
+              // Build the html file name (e.g., ganesha.html)
+              const page = title + ".html";
+              // Set iframe src
+              document.getElementById("frame-iframe").src = page;
+              // Show the frame
+              document.getElementById("card-frame").style.display = "block";
+              // Optional: Scroll to frame
+              document
+                .getElementById("card-frame")
+                .scrollIntoView({ behavior: "smooth" });
+            });
+          });
+          // ...existing code...
+          document.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("click", function () {
+              const title = card
+                .querySelector("h3")
+                .textContent.trim()
+                .toLowerCase();
+              const page = title + ".html";
+              document.getElementById("frame-iframe").src = page;
+              document.getElementById("card-frame").style.display = "block";
+              document.body.classList.add("iframe-active"); // Add class to body
+              document
+                .getElementById("card-frame")
+                .scrollIntoView({ behavior: "smooth" });
+            });
+          });
+          // ...existing code...
+        </script>
+
+        <section id="sec2">
+          <h2>About Us</h2>
+          <p>
+            Welcome to the "Temple of the Digital Gods," a unique online
+            platform dedicated to exploring and celebrating the rich tapestry of
+            deities from cultures around the world. Our mission is to provide a
+            comprehensive and engaging resource for those interested in learning
+            about various gods and goddesses, their stories, symbolism, and
+            cultural significance.
+          </p>
+          <p>
+            At the Temple of the Digital Gods, we believe that understanding
+            mythology and religious traditions can foster greater appreciation
+            and respect for diverse cultures. Our platform features detailed
+            profiles, images, and historical contexts for a wide range of
+            deities, from the well-known to the obscure.
+          </p>
+          <p>
+            Whether you are a student, researcher, or simply curious about the
+            divine figures that have shaped human history and culture, we invite
+            you to explore our digital temple. Join us on this journey of
+            discovery as we delve into the fascinating world of gods and
+            goddesses, uncovering their enduring influence on art, literature,
+            and society.
+          </p>
+          <p>
+            Thank you for visiting the Temple of the Digital Gods. We hope you
+            find inspiration and knowledge within our virtual walls.
+          </p>
+        </section>
+        <section id="sec3">
+          <h2>Contact Us</h2>
+          <p>
+            We'd love to hear from you! Whether you have questions, feedback, or
+            suggestions, please feel free to reach out to us. You can contact us
+            via email at <a href="mailto:">Example@gmail.com</a>
+          </p>
+        </section>
+        <footer>
+          <p>© 2025 Temple of the digital gods. All rights reserved.</p>
+          <p>Coded by Ayush & design by Adrian</p>
+        </footer>
       </section>
     </main>
   </body>
 </html>
-
-
