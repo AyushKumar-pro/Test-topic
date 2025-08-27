@@ -32,6 +32,7 @@ nav a {
   font-weight: 600;
   margin-left: 10px;
 }
+
 form {
   width: 100%;
   height: 100%;
@@ -98,10 +99,26 @@ input#box {
 .sub {
   font-size: clamp(18px, 3vw, 30px);
   top: 65.5%;
-  font-weight: 500;
-  background-image: none;
-  color: white;
-  -webkit-text-stroke: 0.5px #222;
+}
+
+@media (max-width: 600px) {
+  .title.sub {
+    top: 70%; /* Move h2 further down on small screens */
+    font-size: clamp(18px, 5vw, 28px);
+  }
+  .title {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+  button#search,
+  button#menu {
+    width: 100%;
+    height: 100%;
+  }
+  button#search svg,
+  button#menu svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 section#sec1 {
   width: 100%;
@@ -113,13 +130,15 @@ section#sec1 {
 #sub-nav {
   display: none;
   position: fixed;
-  top: 45px; /* nav height + margin */
-  width: 100%;
-  max-width: 500px;
+  top: 85px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 400px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 16px 16px;
+  border-radius: 16px;
   z-index: 100;
-  margin: 20px auto 0 auto;
+  margin: 0;
 }
 #sub-nav ul {
   list-style: none;
@@ -274,21 +293,22 @@ h3 {
   position: relative;
   top: 240px;
   width: calc(100% - 48px);
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto;
-  background: #fff;
+  background-color: #f5f5f5;
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
   padding: 24px;
+  height: 1200px;
   text-align: center;
   scroll-margin-top: 100px;
 }
 #frame-iframe {
   width: 100%;
+  max-width: 700px;
   border: none;
   border-radius: 12px;
   height: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -301,7 +321,7 @@ footer {
   box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.3);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  top: 300px;
+  top: 70px;
 }
 footer p {
   margin: 5px 0;
@@ -321,7 +341,9 @@ nav {
     padding: 16px;
   }
   #frame-iframe {
-    height: auto;
+    max-width: 98vw;
+    min-height: 180px;
+    aspect-ratio: 16/9;
   }
 }
 #sec2 {
@@ -335,7 +357,7 @@ nav {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
   position: relative;
-  top: 300px;
+  top: 70px;
 }
 #sec2 h2 {
   font-size: clamp(24px, 4vw, 36px);
@@ -356,7 +378,7 @@ nav {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
   position: relative;
-  top: 300px;
+  top: 70px;
 }
 #sec3 h2 {
   font-size: clamp(24px, 4vw, 36px);
